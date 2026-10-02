@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>STARSET — TokSik · MV</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<style>
+  html, body { margin: 0; height: 100%; background: #000; overflow: hidden; }
+  #c { position: fixed; inset: 0; margin: auto; width: 100vw; height: 56.25vw; max-height: 100vh; max-width: 177.78vh; display: block; }
+  #ui { position: fixed; inset: 0; display: grid; place-items: center; cursor: pointer; background: radial-gradient(circle at 50% 50%, rgba(40,0,60,.55), rgba(0,0,0,.92)); color: #fff;
+        font-family: Bahnschrift, "Microsoft YaHei", sans-serif; transition: opacity .4s; }
+  #ui.hide { opacity: 0; pointer-events: none; }
+  #ui .box { text-align: center; letter-spacing: .3em; }
+  #ui .t { font-size: 72px; font-weight: 900; letter-spacing: .05em; text-shadow: -3px 0 #ff1f9a, 3px 0 #19e6ff; }
+  #ui .z { color: #8dff2e; font-size: 22px; margin-top: 6px; letter-spacing: .6em; }
+  #ui .b { margin-top: 36px; font-size: 18px; border: 2px solid #e6ff1a; color: #e6ff1a; padding: 14px 28px; display: inline-block; }
+  #ui .k { margin-top: 22px; font-size: 13px; opacity: .6; letter-spacing: .15em; font-family: Consolas, monospace; }
+</style>
+</head>
+<body>
+<canvas id="c"></canvas>
+<div id="ui"><div class="box">
+  <div style="font-size:14px;opacity:.7">STARSET</div>
+  <div class="t">TOKSIK</div>
+  <div class="z">毒 音</div>
+  <div class="b">▶ INITIATE TRANSMISSION · 接收信号</div>
+  <div class="k">SPACE 播放/暂停 · ←/→ 快退/快进 5s · F 全屏 · H 隐藏字幕层</div>
+</div></div>
+<audio id="au" src="audio/toksik.flac" preload="auto"></audio>
+<script src="data.js"></script>
+<script src="js/lyrics.js"></script>
+<script>
+  // lyrics.js and data.js are git-ignored (copyrighted song material); explain what is missing
+  window.TOKSIK_LYRICS = window.TOKSIK_LYRICS || [];
+  if (!window.TOKSIK_AUDIO) addEventListener('DOMContentLoaded', () => {
+    document.querySelector('#ui .b').textContent = '缺少 web/data.js：请先放入音频并运行 python analysis/analyze.py';
+  });
+</script>
+<script src="js/gl.js"></script>
+<script src="js/shaders_common.js"></script>
+<script src="js/shaders_a.js"></script>
+<script src="js/shaders_b.js"></script>
+<script src="js/shaders_c.js"></script>
+<script src="js/timeline.js"></script>
+<script src="js/hud.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>

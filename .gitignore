@@ -1,0 +1,13 @@
+# Local-only timed lyrics — copy web/js/lyrics.example.js and fill in your own
+web/js/lyrics.js
+
+# Render output
+out/
+*.mp4
+
+# Python / OS
+__pycache__/
+*.pyc
+.venv/
+.DS_Store
+Thumbs.db

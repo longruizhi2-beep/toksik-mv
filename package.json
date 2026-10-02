@@ -1,0 +1,12 @@
+{
+  "name": "toksik-mv",
+  "version": "1.0.0",
+  "description": "Beat-synced acid / cyberpunk / glitch music video for STARSET - TokSik, rendered with a hand-written WebGL2 engine",
+  "private": true,
+  "scripts": {
+    "analyze": "python analysis/analyze.py",
+    "start": "node render/server.js",
+    "render": "node render/server.js --render out/TokSik_MV_1080p60.mp4"
+  },
+  "engines": { "node": ">=18" }
+}
